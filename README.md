@@ -68,9 +68,10 @@ npm start
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/02ddd644-f4db-4740-9594-a3db467ebe10" />
 
-### 🙌 Author
+###  Author
 
-Isha Raj
+Isha Raj 
+
 GitHub: @isha54ry
 Built during a custom API server project challenge 
 
