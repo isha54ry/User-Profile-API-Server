@@ -70,8 +70,8 @@ npm start
 
 ### 🧪 Running Tests
 
-Backend Tests
-Run all backend tests with coverage:
+**Backend Tests**
+**Run all backend tests with coverage:**
 
 ```
 Edit
@@ -85,6 +85,18 @@ go test ./... -v
 ```
 
 ### ✅ Test Coverage Screenshot
+
+**Unit Testing**
+
+<img width="440" alt="unit testing" src="https://github.com/user-attachments/assets/5a33047a-3893-4d72-a8b7-0c979ac00165" />
+
+**Integration Testing**
+
+<img width="406" alt="integration testing" src="https://github.com/user-attachments/assets/8ca08231-5457-4f10-b2a5-7d03c6415143" />
+
+**Coverage Testing**
+
+<img width="450" alt="coverage" src="https://github.com/user-attachments/assets/8dcb2020-bb95-4017-86f3-ce45bc29896b" />
 
 
 
