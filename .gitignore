@@ -1,0 +1,41 @@
+ECHO is on.
+# Go-specific
+*.exe
+*.test
+*.out
+*.mod
+*.sum
+
+# Dependency directories
+vendor/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment/config
+.env
+config.json
+credentials.json
+
+# Logs
+*.log
+
+# Uploaded files (if any temp local storage)
+uploads/
+temp/
+
+# AWS credentials if you use shared config
+~/.aws/
+
+# PostgreSQL data files (if local)
+*.pgsql
+*.psql
+
+# PDF/generated outputs (optional)
+*.pdf
