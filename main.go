@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-    _ "github.com/lib/pq" // PostgreSQL driver
+	_ "github.com/lib/pq" // PostgreSQL driver
 	"go-user-service/db"
 	"go-user-service/handlers"
 )
@@ -16,24 +16,27 @@ func withCORS(next http.Handler) http.Handler {
 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
-		// Respond OK to preflight
 		if r.Method == "OPTIONS" {
 			w.WriteHeader(http.StatusOK)
 			return
 		}
-
 		next.ServeHTTP(w, r)
 	})
 }
 
-func main() {
+// ✅ Extracted StartServer so it can be tested
+func StartServer(port string) {
 	db.InitDB()
 
-	// Apply middleware to all routes
-	http.Handle("/users", withCORS(http.HandlerFunc(handlers.UsersHandler)))
-	http.Handle("/users/", withCORS(http.HandlerFunc(handlers.UserHandler)))
-	http.Handle("/profile/", withCORS(http.HandlerFunc(handlers.ProfileHandler)))
+	mux := http.NewServeMux()
+	mux.Handle("/users", withCORS(http.HandlerFunc(handlers.UsersHandler)))
+	mux.Handle("/users/", withCORS(http.HandlerFunc(handlers.UserHandler)))
+	mux.Handle("/profile/", withCORS(http.HandlerFunc(handlers.ProfileHandler)))
 
-	log.Println("Server started at http://localhost:8081")
-	log.Fatal(http.ListenAndServe(":8081", nil))
+	log.Printf("Server started at http://localhost%s", port)
+	log.Fatal(http.ListenAndServe(port, mux))
+}
+
+func main() {
+	StartServer(":8081")
 }
