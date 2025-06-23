@@ -68,7 +68,27 @@ npm start
 
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/02ddd644-f4db-4740-9594-a3db467ebe10" />
 
-### 🙌 Author
+### 🧪 Running Tests
+
+Backend Tests
+Run all backend tests with coverage:
+
+```
+Edit
+go test ./... -coverprofile=coverage.out
+go tool cover -html=coverage.out
+Run backend tests with verbose output:
+```
+```
+Edit
+go test ./... -v
+```
+
+### ✅ Test Coverage Screenshot
+
+
+
+###  Author
 
 Isha Raj
 GitHub: @isha54ry
