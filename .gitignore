@@ -1,13 +1,16 @@
-ECHO is on.
-# Go-specific
+# ─────────────────────────────
+# Go backend
+# ─────────────────────────────
 *.exe
 *.test
 *.out
+
 *.mod
 *.sum
-
-# Dependency directories
 vendor/
+
+# Logs
+*.log
 
 # IDE/editor files
 .vscode/
@@ -18,24 +21,30 @@ vendor/
 .DS_Store
 Thumbs.db
 
-# Environment/config
+# Env/config/secrets
 .env
 config.json
 credentials.json
 
-# Logs
-*.log
+# AWS credentials
+~/.aws/
 
-# Uploaded files (if any temp local storage)
+# Uploads and temporary files
 uploads/
 temp/
 
-# AWS credentials if you use shared config
-~/.aws/
-
-# PostgreSQL data files (if local)
+# PostgreSQL files (precautionary)
 *.pgsql
 *.psql
 
-# PDF/generated outputs (optional)
+# Generated output
 *.pdf
+
+# ─────────────────────────────
+# React frontend (in /frontend/)
+# ─────────────────────────────
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.cache/
