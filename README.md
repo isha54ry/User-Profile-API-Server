@@ -101,6 +101,43 @@ go test ./... -v
 
 <img width="450" alt="coverage" src="https://github.com/user-attachments/assets/8dcb2020-bb95-4017-86f3-ce45bc29896b" />
 
+## API Testing with Keploy
+
+Testing this Go-based User Profile API server wasn’t treated like a last-minute checkbox. Between unit tests, integration tests, and Keploy-powered API testing, the goal was simple: catch bugs before they catch me.
+
+### Unit & Integration Tests
+
+The test suite includes:
+
+- `db.go` – Verifies PostgreSQL connection logic
+- `handlers/` – HTTP handler tests using `httptest`
+- `utils/pdf.go` – PDF generation test coverage
+- CRUD tests with and without actual DB calls
+
+Run tests using:
+
+```bash
+go test ./tests/...
+```
+## API Testing with Keploy
+
+Testing this Go-based User Profile API server wasn’t treated like a last-minute checkbox. Between unit tests, integration tests, and Keploy-powered API testing, the goal was simple: catch bugs before they catch me.
+
+### Unit & Integration Tests
+
+The test suite includes:
+
+- `db.go` – Verifies PostgreSQL connection logic
+- `handlers/` – HTTP handler tests using `httptest`
+- `utils/pdf.go` – PDF generation test coverage
+- CRUD tests with and without actual DB calls
+
+Run tests using:
+
+```bash
+go test ./tests/...
+```
+
 **Keploy API Testing Report**
 
 [keploy test](https://github.com/user-attachments/assets/252c1c55-3dc2-4d7a-8b43-c7002e07c15c)
